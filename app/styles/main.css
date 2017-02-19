@@ -1,14 +1,14 @@
 .browserupgrade {
-  margin: 0.2em 0;
+/*  margin: 0.2em 0;
   background: #ccc;
   color: #000;
-  padding: 0.2em 0;
+  padding: 0.2em 0;*/
 }
 
 /* Space out content a bit */
 body {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+width: 100%;
+margin: 0%;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -22,7 +22,7 @@ body {
 /* Custom page header */
 .header {
   padding-bottom: 1rem;
-  border-bottom: .05rem solid #e5e5e5;
+/*  border-bottom: .05rem solid #e5e5e5;*/
 }
 
 /* Make the masthead heading the same height as the navigation */
@@ -36,7 +36,7 @@ body {
 .footer {
   padding-top: 1.5rem;
   color: #777;
-  border-top: .05rem solid #e5e5e5;
+/*  border-top: .05rem solid #e5e5e5;*/
 }
 
 /* Customize container */
@@ -50,9 +50,11 @@ body {
 }
 
 /* Main marketing message and sign up button */
-.jumbotron {
+.container-fluid {
   text-align: center;
-  border-bottom: .05rem solid #e5e5e5;
+  width:100%;
+  margin:0px;
+/*  border-bottom: .05rem solid #e5e5e5;*/
 }
 .jumbotron .btn {
   padding: .75rem 1.5rem;
@@ -84,4 +86,26 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+#desk{
+  margin-top: 100px;
+}
+#xaxis .domain {
+  fill:none;
+  stroke:#000;
+}
+#yaxis text {
+  font-size: 20px;
+  font-weight: bold;
+
+}
+#graph{
+  padding-top:100px;
+  text-align:center;
+}
+.thumbnail{
+  padding:40px;
+}
+.caption{
+  display:inline-block;
 }
