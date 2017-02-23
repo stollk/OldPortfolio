@@ -10,7 +10,27 @@ body {
 width: 100%;
 margin: 0%;
 }
-
+/*fullpage.js styling*/
+#fullpage { position: fixed; overflow: automatic; }
+/*keeps navbar with page*/
+.header {
+  position: fixed;
+  z-index: 99;
+  width:100%;
+}
+.header h3{
+  padding-left:10px;
+}
+.nav a{
+  color:#0275d8;
+}
+li.active a{
+  color: #fff;
+  cursor: default;
+  background-color: #0275d8;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -54,6 +74,7 @@ margin: 0%;
   text-align: center;
   width:100%;
   margin:0px;
+  padding:none;
 /*  border-bottom: .05rem solid #e5e5e5;*/
 }
 .jumbotron .btn {
@@ -87,8 +108,14 @@ margin: 0%;
     border-bottom: 0;
   }
 }
+.titles{
+  margin-top:150px;
+  padding: 20px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
 #desk{
-  margin-top: 100px;
+  margin-top: 150px;
 }
 #xaxis .domain {
   fill:none;
