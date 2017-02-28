@@ -5,12 +5,14 @@ $(document).ready(function() {
     recordHistory:true,
     menu:false,
     menu: '#nav',
-    anchors: ['a', 'b', 'c'],
+    anchors: ['a', 'b', 'c','d','e'],
     normalScrollElements: '#nav',
     paddingTop: 0,
     paddingBottom: 0,
     responsiveWidth: 640,
     css3: true,
+    scrollBar: true,
+    scrollOverflowReset: true,
     onLeave: function(index, nextIndex, direction){
             if (nextIndex == 2) {
             barGraph();
@@ -73,7 +75,7 @@ function barGraph() {
       /* .tickValues(tickVals); originally*/
 
   var	yAxis = d3.svg.axis();
-    yAxis
+      yAxis
       .orient('left')
       .scale(yscale)
       .tickFormat(function(d,i){ return categories[i]; })
@@ -108,12 +110,11 @@ function barGraph() {
               .duration(1500)
               .attr('width', function(d) {return xscale(d); });
 
-  /*var transitext = d3.select('#bars')
+/*  var transitext = d3.select('#bars')
             .selectAll('text')
             .data(dollars)
             .enter()
             .append('text')
-            .attr({'x':function(d) {return xscale(d)-200; },'y':function(d,i){ return yscale(i)+35; }})
-            .text(function(d){ return d+"$"; }).style({'fill':'#fff','font-size':'14px'});
-  */
+            .attr({'x1':function(d,i){ return xscale(i)-'y'; },'y':function(d,i){ return yscale(i)+42; }})
+            .text(function(d){ return d; }).style({'fill':'#fff','font-size':'18px','text-align':'left','font-weight':'bold'});*/
 };
