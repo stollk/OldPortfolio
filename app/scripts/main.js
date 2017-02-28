@@ -12,7 +12,6 @@ $(document).ready(function() {
     responsiveWidth: 640,
     css3: true,
     scrollBar: true,
-    scrollOverflowReset: true,
     onLeave: function(index, nextIndex, direction){
             if (nextIndex == 2) {
             barGraph();
