@@ -1,138 +1,148 @@
 $(document).ready(function() {
   //settings for fullpage.js
   $('#fullpage').fullpage({
-    animateAnchor:true,
-    recordHistory:true,
-    menu:false,
-    menu: '#nav',
-    anchors: ['a'],
-    normalScrollElements: '#nav',
-    scrollHorizontally:true,
-    sectionSelector: '.vertical-scrolling',
-    slideSelector: '.horizontal-scrolling',
-    paddingTop: 0,
-    paddingBottom: 0,
-    responsiveWidth: 640,
-    css3: true,
-    scrollBar: true,
+  animateAnchor:true,
+  recordHistory:true,
+  menu:false,
+  menu: '#nav',
+  anchors: ['a'],
+  normalScrollElements: '#nav',
+  scrollHorizontally:true,
+  sectionSelector: '.vertical-scrolling',
+  slideSelector: '.horizontal-scrolling',
+  paddingTop: 0,
+  paddingBottom: 0,
+  responsiveWidth: 640,
+  css3: true,
+  scrollBar: true,
     onSlideLeave: function(slideIndex, nextIndex, direction){
-            if (nextIndex == 1) {
-            barGraph();
-          }
+      if (nextIndex == 1) {
+        barGraph();
+        barGraph2();
+        barGraph3();
+      }
     }
   });
 });
-/*
-$(function() {
-	$('ul.nav a').bind('click',function(event){
-		var $anchor = $(this);
 
-		if you want to use one of the easing effects:
-		$('html, body').stop().animate({
-			scrollLeft: $($anchor.attr('href')).offset().left
-		}, 1500,'easeInOutExpo');
-
-		$('html, body').stop().animate({
-			scrollLeft: $($anchor.attr('href')).offset().left
-		}, 1000);
-		event.preventDefault();
-	});
-});*/
-function barGraph() {
+function barGraph(){
   d3.select('#wrapper').selectAll('*').remove();
-//function bargraph must wrap this in a function and then call the function so it loads when the section is scrolled to
-  var categories= ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'];
+  var HorizontalBarGraph = function(el, series) {
+    this.el = d3.select(el);
+    this.series = series;
+  };
 
-  var dollars = [213,209,190,179,156];
+  HorizontalBarGraph.prototype.draw = function() {
+    var x = d3.scale.linear()
+      .domain([0, d3.max(this.series, function(d) { return d.value })])
+      .range([0, 100]);
 
-  var colors = ['#0000b4','#0082ca','#0094ff','#0d4bcf','#0066AE'];
+    var segment = this.el
+      .selectAll('.horizontal-bar-graph-segment')
+        .data(this.series)
+      .enter()
+        .append('div').classed('horizontal-bar-graph-segment', true);
 
-  var grid = d3.range(25).map(function(i){
-    return {'x1':0,'y1':0,'x2':0,'y2':480};
-  });
+    segment
+      .append('div').classed('horizontal-bar-graph-label', true)
+        .text(function(d) { return d.label });
 
-  var tickVals = grid.map(function(d,i){
-    if(i>0){ return i*10; }
-    else if(i===0){ return '100';}
-  });
+    segment
+      .append('div').classed('horizontal-bar-graph-value', true)
+        .append('div').classed('horizontal-bar-graph-value-bar', true)
+          .style('background-color', function(d) { return d.color })
+          .text(function(d) { return d.inner_label ? d.inner_label : '' })
+          .transition()
+            .duration(1000)
+            .style('min-width', function(d) { return x(d.value) + '%' });
 
-  var xscale = d3.scale.linear()
-          .domain([10,250])
-          .range([0,722]);
+  };
 
-  var yscale = d3.scale.linear()
-          .domain([0,categories.length])
-          .range([90,490]);
+  var graph = new HorizontalBarGraph('#wrapper', [
+    {label: 'JavaScript', value: 167, color: '#6ea6df' },
+    {label: 'PHP',   value: 343,  color: '#84c26d' },
+    {label: 'HTML',   value: 224,  color: '#e17a69' },
+    {label: 'CSS',   value: 224,  color: '#e17a69' }
+  ]);
+  graph.draw();
+}
+/////////////////////////////////////////////////////////////////////////////////////barGraph2////////////////////////////////////////////////////////////////////////////////////////////////
+function barGraph2(){
+  d3.select('#wrapper2').selectAll('*').remove();
+  var HorizontalBarGraph = function(el, series) {
+    this.el = d3.select(el);
+    this.series = series;
+  };
 
-  var colorScale = d3.scale.quantize()
-          .domain([0,categories.length])
-          .range(colors);
+  HorizontalBarGraph.prototype.draw = function() {
+    var x = d3.scale.linear()
+      .domain([0, d3.max(this.series, function(d) { return d.value })])
+      .range([0, 100]);
 
-  var canvas = d3.select('#wrapper')
-          .append('svg')
-          .attr({'width':900,'height':550});
+    var segment = this.el
+      .selectAll('.horizontal-bar-graph-segment')
+        .data(this.series)
+      .enter()
+        .append('div').classed('horizontal-bar-graph-segment', true);
 
-/*	var grids = canvas.append('g')
-            .attr('id','grid')
-            .attr('transform','translate(150,10)')
-            .selectAll('line')
-            .data(grid)
-            .enter()
-            .append('line')
-            .attr({'x1':function(d,i){ return i*30; },
-               'y1':function(d){ return d.y1; },
-               'x2':function(d,i){ return i*30; },
-               'y2':function(d){ return d.y2; },
-            })
-            .style({'stroke':'#adadad','stroke-width':'0px'});*/
+    segment
+      .append('div').classed('horizontal-bar-graph-label', true)
+        .text(function(d) { return d.label });
 
-  var	xAxis = d3.svg.axis();
-    /*xAxis
-      .orient('bottom')
-      .scale(xscale)*/
-      /* .tickValues(tickVals); originally*/
+    segment
+      .append('div').classed('horizontal-bar-graph-value', true)
+        .append('div').classed('horizontal-bar-graph-value-bar', true)
+          .style('background-color', function(d) { return d.color })
+          .text(function(d) { return d.inner_label ? d.inner_label : '' })
+          .transition()
+            .duration(1000)
+            .style('min-width', function(d) { return x(d.value) + '%' });
 
-  var	yAxis = d3.svg.axis();
-      yAxis
-      .orient('left')
-      .scale(yscale)
-      .tickFormat(function(d,i){ return categories[i]; })
-      .tickValues(d3.range(6));
+  };
 
-  var y_xis = canvas.append('g')
-            .attr('transform', 'translate(150,0)')
-            .attr('id','yaxis')
-            .call(yAxis);
+  var graph = new HorizontalBarGraph('#wrapper2', [
+    {label: 'WordPress', value: 167, color: '#6ea6df' },
+    {label: 'Illustrator',   value: 343,  color: '#84c26d' },
+    {label: 'Photoshop',   value: 224,  color: '#e17a69' }
+  ]);
+  graph.draw();
+}
+/////////////////////////////////////////////////////////////////////////////////////barGraph3////////////////////////////////////////////////////////////////////////////////////////////////
+function barGraph3(){
+  d3.select('#wrapper3').selectAll('*').remove();
+  var HorizontalBarGraph = function(el, series) {
+    this.el = d3.select(el);
+    this.series = series;
+  };
+  HorizontalBarGraph.prototype.draw = function() {
+    var x = d3.scale.linear()
+      .domain([0, d3.max(this.series, function(d) { return d.value })])
+      .range([0, 100]);
 
-  var x_xis = canvas.append('g')
-            .attr('transform', 'translate(150,480)')
-            .attr('id','xaxis')
-            //removed x axis
+    var segment = this.el
+      .selectAll('.horizontal-bar-graph-segment')
+        .data(this.series)
+      .enter()
+        .append('div').classed('horizontal-bar-graph-segment', true);
 
-  var chart = canvas.append('g')
-            .attr('transform', 'translate(150,0)')
-            .attr('id','bars')
-            .selectAll('rect')
-            .data(dollars)
-            .enter()
-            .append('rect')
-            .attr('height',35) /*height of bars*/
-            .attr({'x':0,'y':function(d,i){ return yscale(i)+19; }})
-            .style('fill',function(d,i){ return colorScale(i); })
-            .attr('width',function(d){ return 0; });
+    segment
+      .append('div').classed('horizontal-bar-graph-label', true)
+        .text(function(d) { return d.label });
 
+    segment
+      .append('div').classed('horizontal-bar-graph-value', true)
+        .append('div').classed('horizontal-bar-graph-value-bar', true)
+          .style('background-color', function(d) { return d.color })
+          .text(function(d) { return d.inner_label ? d.inner_label : '' })
+          .transition()
+            .duration(1000)
+            .style('min-width', function(d) { return x(d.value) + '%' });
 
-  var transit = d3.select('#wrapper').select('svg').selectAll('rect')
-              .data(dollars)
-              .transition()
-              .duration(1500)
-              .attr('width', function(d) {return xscale(d); });
+  };
 
-/*  var transitext = d3.select('#bars')
-            .selectAll('text')
-            .data(dollars)
-            .enter()
-            .append('text')
-            .attr({'x1':function(d,i){ return xscale(i)-'y'; },'y':function(d,i){ return yscale(i)+42; }})
-            .text(function(d){ return d; }).style({'fill':'#fff','font-size':'18px','text-align':'left','font-weight':'bold'});*/
-};
+  var graph = new HorizontalBarGraph('#wrapper3', [
+    {label: 'MySQL', value: 167, color: '#6ea6df' },
+    {label: 'phpMyAdmin',   value: 143,  color: '#84c26d' },
+  ]);
+  graph.draw();
+}

@@ -85,7 +85,6 @@ li.active a{
 
 /* Main marketing message and sign up button */
 .container-fluid {
-  text-align: center;
   width:100%;
   margin:0px;
   padding:none;
@@ -122,6 +121,7 @@ li.active a{
     border-bottom: 0;
   }
 }
+/*//////////////////////////////////////////////////////////////////////////////////////End Nav and Presets///////////////////////////////////////////////////////////////////////////////////*/
 .titles h2{
   padding: 20px;
   margin-bottom:30px;
@@ -148,19 +148,57 @@ li.active a{
 #desk{
   margin-top: 150px;
 }
-#xaxis .domain {
-  fill:none;
-  stroke:#000;
+/*//////////////////////////////////////////////////////////////////////////////////////////////Skills Page/////////////////////////////////////////////////////////////////////////////////////*/
+.col-md-4{
+  display:inline-block;
+  float:left;
+  padding-left:100px;
 }
-#yaxis text {
-  font-size: 20px;
-  font-weight: bold;
+.border{
+  border:3px solid black;
+  border-radius: 10px;
+}
+.skills{
+  padding: 20px 0px 20px 20px;
+}
+.horizontal-bar-graph {
+  display: table;
+  width: 70%;
+  padding:0px 0px 20px 20px;
+}
 
+.horizontal-bar-graph-segment {
+  display: table-row;
 }
-#graph{
-  padding-top:100px;
-  text-align:center;
+
+.horizontal-bar-graph-label {
+  display: table-cell;
+  border-right: 1px solid silver;
+  text-align: right;
+  padding: 4px 10px 4px 0;
+  vertical-align: baseline;
+  white-space: nowrap;
 }
+
+.horizontal-bar-graph-value {
+  display: table-cell;
+  padding: 3px 0;
+  vertical-align: baseline;
+  width: 100%;
+}
+
+.horizontal-bar-graph-value-bar {
+  background: silver;
+  padding: 4px 4px 3px;
+  height: 1em;
+  text-align: right;
+  color: white;
+  overflow: visible;
+  display: inline-block;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+/*/////////////////////////////////////////////////////////////////////////////Work Page/////////////////////////////////////////////////////////////////////////////////////////////*/
 .thumbnail{
   padding:40px;
 }
@@ -169,4 +207,16 @@ li.active a{
 }
 .carousel-inner .carousel-item img {
     margin: 0 auto;
+}
+#card1{
+  border:none;
+  background:none;
+}
+#card2{
+  border:none;
+  background:none;
+}
+#card3{
+  border:none;
+  background:#fff;
 }
