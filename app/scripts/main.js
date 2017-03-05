@@ -27,7 +27,7 @@ $(document).ready(function() {
 });
 $(document).ready(function(){
 	$(".footer").click(function(){
-		$(".panel").toggle("fast");
+		$(".panel").slideToggle("fast");
 		$(this).toggleClass("active");
 		return false;
 	});

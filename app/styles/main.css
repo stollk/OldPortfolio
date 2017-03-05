@@ -105,6 +105,7 @@ li.active a{
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 48em) {
+
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -125,19 +126,54 @@ li.active a{
  border-top: 3px solid black;
  border-bottom:3px solid black;
  width: 100%;
+ padding:0px;
+ margin:0px;
  padding-bottom:40px;
  margin-bottom:150px;
 }
 .footer{
-
+  width:100%
 }
 .footerContent{
-  border-top:1px solid gray;
   height:40px;
+  background: #191919;
+  width:100%;
 }
 .panel{
   display:none;
+  width:100%;
+  background: #191919;
+  border-top: 1px solid #191919;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color:black;
+  padding-bottom:40px;
+  opacity: 0.8;
 }
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.submit{
+  padding: 5px 30px 5px 30px;
+  text-align: center;
+  border: 1px solid #8C8C8C;
+  border-radius: 30px;
+  background: #191919;
+  color:#8C8C8C;
+}
+.input{
+  border:none;
+  border-bottom: 1px solid #8C8C8C;
+  background: #191919;
+  color:#8C8C8C;
+}
+form{
+  text-align: center;
+  padding: 0px 20px 0px 20px;
+  color:#8C8C8C;
+}
+
 /*//////////////////////////////////////////////////////////////////////////////////////End Nav, Footer and Presets///////////////////////////////////////////////////////////////////////////////////*/
 .titles h2{
   padding: 20px;
@@ -162,8 +198,15 @@ li.active a{
   color:white;
   padding: 10px 35px 10px 35px;
 }
-#desk{
-  margin-top: 150px;
+.svg2{
+  margin-bottom:193px;
+  padding:0px;
+  width:25%;
+}
+.svg1{
+  margin-bottom:193px;
+  padding:0px;
+  width:100%;
 }
 /*//////////////////////////////////////////////////////////////////////////////////////////////Skills Page/////////////////////////////////////////////////////////////////////////////////////*/
 .col-md-4{
