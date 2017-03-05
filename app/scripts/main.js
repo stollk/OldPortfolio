@@ -25,6 +25,13 @@ $(document).ready(function() {
     },
   });
 });
+$(document).ready(function(){
+	$(".footer").click(function(){
+		$(".panel").toggle("fast");
+		$(this).toggleClass("active");
+		return false;
+	});
+});
 function barGraph1(){
   d3.select('#wrapper').selectAll('*').remove();
   var HorizontalBarGraph = function(el, series) {
