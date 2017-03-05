@@ -1,5 +1,7 @@
 $(document).ready(function() {
   //settings for fullpage.js
+  var slideIndexS = 0,
+    sliding = false;
   $('#fullpage').fullpage({
   animateAnchor:true,
   recordHistory:true,
@@ -7,7 +9,6 @@ $(document).ready(function() {
   menu: '#nav',
   anchors: ['a'],
   normalScrollElements: '#nav',
-  scrollHorizontally:true,
   sectionSelector: '.vertical-scrolling',
   slideSelector: '.horizontal-scrolling',
   paddingTop: 0,
@@ -17,15 +18,14 @@ $(document).ready(function() {
   scrollBar: true,
     onSlideLeave: function(slideIndex, nextIndex, direction){
       if (nextIndex == 1) {
-        barGraph();
-        barGraph2();
-        barGraph3();
+          barGraph1();
+          barGraph2();
+          barGraph3();
       }
-    }
+    },
   });
 });
-
-function barGraph(){
+function barGraph1(){
   d3.select('#wrapper').selectAll('*').remove();
   var HorizontalBarGraph = function(el, series) {
     this.el = d3.select(el);
