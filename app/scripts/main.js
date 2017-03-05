@@ -23,10 +23,19 @@ $(document).ready(function() {
           barGraph3();
       }
     },
+    onSlideLeave: function(slideIndex, nextIndex, direction){
+      if (nextIndex == 1,2,3,4) {
+        svgaddclass();
+      }
+    },
   });
 });
+function svgaddclass(){
+  $('svg').attr('class','');
+  $('svg').attr('class','svg2 fixed-bottom');
+}
 $(document).ready(function(){
-	$('.footerContent').click(function(){
+	$('.footerContent,.contact').click(function(){
 		$('.panel').slideToggle('fast');
 		$(this).toggleClass('active');
 		return false;
