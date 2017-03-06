@@ -36,12 +36,9 @@ bottom:0px;
 .nav a{
   color:#0275d8;
 }
-li.active a{
-  color: #fff;
-  cursor: default;
-  background-color: #0275d8;
-  border: 1px solid blue;
-  border-radius: 5px;
+.li.active a{
+  padding-bottom:0px;
+  border-bottom: 2px solid #5E5E5E;
 }
 .navDivider{
   padding:12px 20px 0px 30px;
@@ -181,6 +178,10 @@ form{
   font-size: 18px;
   padding-top:12px;
 }
+.nav-link:hover{
+  padding-bottom:0px;
+  border-bottom: 2px solid #5E5E5E;
+}
 .text-muted{
   font-size:24px;
 }
@@ -301,6 +302,7 @@ form{
 .work{
   width:50%;
   margin:auto;
+  margin-top:20px;
 }
 .projector{
   border: 3px solid #5E5E5E;
@@ -352,7 +354,7 @@ form{
 }
 .caption{
   position: absolute;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.45);
   width:100%;
   color: white;
   padding: 10px 20px;
@@ -364,6 +366,11 @@ form{
   -webkit-transition: all 0.6s ease;
   -moz-transition:    all 0.6s ease;
   -o-transition:      all 0.6s ease;
+}
+.launch{
+  background: #BEDEB2 !important;
+  border: 1px solid #BEDEB2;
+  color:#5E5E5E;
 }
 .item1:hover .caption {
   opacity: 1;

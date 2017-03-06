@@ -75,7 +75,7 @@ function barGraph1(){
 
   var graph = new HorizontalBarGraph('#wrapper', [
     {label: 'JavaScript', value: 167, color: '#CEE2E5' },
-    {label: 'PHP',   value: 343,  color: '#FEFAAD' },
+    {label: 'PHP',   value: 194,  color: '#FEFAAD' },
     {label: 'HTML',   value: 224,  color: '#BEDEB2' },
     {label: 'CSS',   value: 224,  color: '#FEFAAD' }
   ]);
@@ -156,8 +156,8 @@ function barGraph3(){
   };
 
   var graph = new HorizontalBarGraph('#wrapper3', [
-    {label: 'MySQL', value: 167, color: '#CEE2E5' },
-    {label: 'phpMyAdmin',   value: 143,  color: '#BEDEB2' },
+    {label: 'MySQL', value: 100, color: '#CEE2E5' },
+    {label: 'phpMyAdmin',   value: 80,  color: '#BEDEB2' },
   ]);
   graph.draw();
 }
