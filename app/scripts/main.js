@@ -32,11 +32,7 @@ $(document).ready(function(){
 		return false;
 	});
 });
-$(document).keydown(function(){
-		$('.screen').slideToggle('slow');
-		$(this).toggleClass('active');
-		return false;
-});
+
 $(document).ready(function(){
 	$('.footerContent, .contact').click(function(){
 		$('.panel').slideToggle('fast');
