@@ -136,8 +136,7 @@ li.active a{
   width:100%
 }
 .footerContent{
-  height:40px;
-  background: #191919;
+  height:0px;
   width:100%;
 }
 .panel{
@@ -183,6 +182,7 @@ form{
 }
 .titles{
   margin-bottom:60px;
+  text-align: center;
 }
 .button{
   text-decoration: none;
@@ -265,6 +265,7 @@ form{
 }
 .projector{
   border: 3px solid black;
+  border-bottom: 6px solid black;
   border-radius: 5px;
   padding-top:25px;
 }
@@ -273,23 +274,72 @@ form{
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-top:0px solid black;
-  margin-top:-5px;
+  margin-top:-3px;
   margin-bottom: 0px;
+  background: #D8D8D8;
 }
+
 .item2{
   margin-top:-22.5px;
 }
+.item2 .caption{
+  margin-bottom: 22.5px;
+}
 .item1{
   margin-top:5.5px;
+}
+.item1 .caption{
+  margin-bottom: -5.5px;
+}
+.item3{
+  margin-top: -22.5px;
+}
+.item3 .caption{
+  margin-bottom: 22.5px;
 }
 .carousel-inner .carousel-item img {
     margin: 0 auto;
     padding-top:0px;
     vertical-align: top;
 }
-.carousel{
-
+.item1{
+  position: relative;
+  overflow: hidden;
 }
-.carousel-indicator{
-  color:black;
+.item2{
+  position: relative;
+  overflow: hidden;
+}
+.caption{
+  position: absolute;
+  background: rgba(0,0,0,0.75);
+  width:100%;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+
+  opacity: 0;
+  bottom: 0;
+  left: -30%;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition:    all 0.6s ease;
+  -o-transition:      all 0.6s ease;
+}
+.item1:hover .caption {
+  opacity: 1;
+  left: 0;
+}
+.item2:hover .caption {
+  opacity: 1;
+  left: 0;
+}
+.item3:hover .caption {
+  opacity: 1;
+  left: 0;
+}
+.cap-bot .caption { left: 0; bottom: -30%;}
+.cap-bot:hover .caption { bottom: 0; }
+
+.carousel{
+  overflow:hidden;
 }
