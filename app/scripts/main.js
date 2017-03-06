@@ -23,19 +23,22 @@ $(document).ready(function() {
           barGraph3();
       }
     },
-    onSlideLeave: function(slideIndex, nextIndex, direction){
-      if (nextIndex == 1,2,3,4) {
-        svgaddclass();
-      }
-    },
   });
 });
-function svgaddclass(){
-  $('svg').attr('class','');
-  $('svg').attr('class','svg2 fixed-bottom');
-}
 $(document).ready(function(){
-	$('.footerContent,.contact').click(function(){
+	$('.projector').click(function(){
+		$('.screen').slideToggle('slow');
+		$(this).toggleClass('active');
+		return false;
+	});
+});
+$(document).keydown(function(){
+		$('.screen').slideToggle('slow');
+		$(this).toggleClass('active');
+		return false;
+});
+$(document).ready(function(){
+	$('.footerContent, .contact').click(function(){
 		$('.panel').slideToggle('fast');
 		$(this).toggleClass('active');
 		return false;

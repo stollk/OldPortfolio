@@ -122,6 +122,7 @@ li.active a{
     border-bottom: 0;
   }
 }
+
 .desklines{
  border-top: 3px solid black;
  border-bottom:3px solid black;
@@ -129,7 +130,7 @@ li.active a{
  padding:0px;
  margin:0px;
  padding-bottom:40px;
- margin-bottom:150px;
+ margin-bottom:80px;
 }
 .footer{
   width:100%
@@ -199,15 +200,14 @@ form{
   padding: 10px 35px 10px 35px;
 }
 .svg2{
-  margin-bottom:193px;
-  padding:0px;
-  width:25%;
-}
-.svg1{
-  margin-bottom:193px;
+  margin-bottom:123px;
   padding:0px;
   width:100%;
 }
+.section{
+  margin-top:-150px;
+}
+
 /*//////////////////////////////////////////////////////////////////////////////////////////////Skills Page/////////////////////////////////////////////////////////////////////////////////////*/
 .col-md-4{
   display:inline-block;
@@ -259,24 +259,37 @@ form{
   -webkit-font-smoothing: antialiased;
 }
 /*/////////////////////////////////////////////////////////////////////////////Work Page/////////////////////////////////////////////////////////////////////////////////////////////*/
-.thumbnail{
-  padding:40px;
+.work{
+  width:50%;
+  margin:auto;
 }
-.caption{
-  display:inline-block;
+.projector{
+  border: 3px solid black;
+  border-radius: 5px;
+  padding-top:25px;
+}
+.screen{
+  border: 3px solid black;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top:0px solid black;
+  margin-top:-5px;
+  margin-bottom: 0px;
+}
+.item2{
+  margin-top:-22.5px;
+}
+.item1{
+  margin-top:5.5px;
 }
 .carousel-inner .carousel-item img {
     margin: 0 auto;
+    padding-top:0px;
+    vertical-align: top;
 }
-#card1{
-  border:none;
-  background:none;
+.carousel{
+
 }
-#card2{
-  border:none;
-  background:none;
-}
-#card3{
-  border:none;
-  background:#fff;
+.carousel-indicator{
+  color:black;
 }
