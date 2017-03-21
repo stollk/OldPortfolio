@@ -5,20 +5,39 @@ $(document).ready(function() {
     recordHistory:true,
     menu:false,
     menu: '#nav',
-    anchors: ['a', 'b', 'c','d','e'],
+    anchors: ['a'],
     normalScrollElements: '#nav',
+    scrollHorizontally:true,
+    sectionSelector: '.vertical-scrolling',
+    slideSelector: '.horizontal-scrolling',
     paddingTop: 0,
     paddingBottom: 0,
     responsiveWidth: 640,
     css3: true,
     scrollBar: true,
-    onLeave: function(index, nextIndex, direction){
-            if (nextIndex == 2) {
+    onSlideLeave: function(slideIndex, nextIndex, direction){
+            if (nextIndex == 1) {
             barGraph();
           }
     }
   });
 });
+/*
+$(function() {
+	$('ul.nav a').bind('click',function(event){
+		var $anchor = $(this);
+
+		if you want to use one of the easing effects:
+		$('html, body').stop().animate({
+			scrollLeft: $($anchor.attr('href')).offset().left
+		}, 1500,'easeInOutExpo');
+
+		$('html, body').stop().animate({
+			scrollLeft: $($anchor.attr('href')).offset().left
+		}, 1000);
+		event.preventDefault();
+	});
+});*/
 function barGraph() {
   d3.select('#wrapper').selectAll('*').remove();
 //function bargraph must wrap this in a function and then call the function so it loads when the section is scrolled to

@@ -6,12 +6,24 @@
 }
 
 /* Space out content a bit */
-body {
-width: 100%;
+/*body {
 margin: 0%;
+width:12000px;
+position:absolute;
+top:0px;
+left:0px;
+bottom:0px;
 }
+.section{
+  margin:0px;
+  bottom:0px;
+  float:left;
+  display:inline-block;
+  height:100%;
+  width:000px;
+}*/
 /*fullpage.js styling*/
-#fullpage { position: fixed; overflow: automatic; }
+/*#fullpage { position: fixed; overflow: automatic; } */
 /*keeps navbar with page*/
 .header {
   position: fixed;
@@ -32,8 +44,7 @@ li.active a{
   border-radius: 5px;
 }
 /*stylesheets for sections*/
-#sa, #sc, #se { background: #A3E2C6; }
-#sb, #sd { background: #BEEAD7; }
+/*#sb, #sd { background: #BEEAD7; } */
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -111,10 +122,28 @@ li.active a{
     border-bottom: 0;
   }
 }
-.titles{
-  margin-top:150px;
+.titles h2{
   padding: 20px;
+  margin-bottom:30px;
 
+}
+.titles{
+  margin-bottom:60px;
+}
+.button{
+  text-decoration: none;
+  border: 1px solid #4ffc84;
+  border-radius: 20px;
+  color:white;
+  font-weight:bold;
+  background:#4ffc84;
+  padding: 10px 20px 10px 20px;
+
+}
+.button:hover{
+  text-decoration: none;
+  color:white;
+  padding: 10px 35px 10px 35px;
 }
 #desk{
   margin-top: 150px;
